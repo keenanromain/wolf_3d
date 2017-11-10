@@ -16,14 +16,14 @@ int		check_input(char *s)
 
 int		main(int ac, char **av)
 {
-	t_wolf *w;
+	t_env *env;
 
 	if (ac != 2)
 		return (ft_puterr(0));
-	if (!(w = (t_wolf *)malloc(sizeof(t_wolf *))))
+	if (!(env = (t_env *)malloc(sizeof(t_env *))))
 		return (ft_puterr(1));
 	if (!check_input(av[1]))
 		return (ft_puterr(2));
-	w->map = av[1];
-	return (proceed(w));
+	env->map = av[1];
+	return (proceed(env));
 }

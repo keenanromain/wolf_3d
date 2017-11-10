@@ -63,7 +63,8 @@ typedef struct		s_env
 	void			*reset_func;
 	void			*redraw_func;
 	bool			status:true;
-	bool			is_texture:false;
+	bool			is_textured:false;
+	char			*map;
 }					t_env;
 
 #endif
