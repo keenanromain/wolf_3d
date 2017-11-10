@@ -85,7 +85,20 @@ typedef struct		s_env
 	double			wall_dst; //used to calculate length of the ray
 	int				wall_hit; // used to tell if we can break out of the DDA loop.
 	int				side;	// If an x-side is hit, it's zero else if an y-side is hit, side equals one
+	// speed modifiers
+	double			move_speed; // constant value in squares/secomd
+	double			rot_speed; // constant value in radians/second
+	// textures
+	int				text_num; //value of the current map square - 1. Reasoing is that there exists a texture 0, but map tole 0 has no texture as it's empty space
+							 //to be able to use texture 0 anyway, substract 1 so that map tiles with value 1 will give texture 0
+	int				wall_x; // represents the exact value where the wall was hit, not just the ineger coordinates of the wall. 
+							// Tells us which x-coord of the texture to used
+	int				text_x; // x-coord of the texture which is calculated out of wall_x
+	int				text_y; //correlates to the x-coord and is only ever set once we know what text_x is.
 	// ~~~~ random ~~~~
+	int				strafe_l; // made the same way as the up down keys, but using plane_x/plane_y instead of dir_x/dir_y
+	int				strafe_r;
+	int				game_loop;
 	double			size;
 	double			mid_x;
 	double			mid_y;
