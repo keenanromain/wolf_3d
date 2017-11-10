@@ -58,6 +58,9 @@ typedef struct		s_env
 	double			direction_vector; //direction vector should always be a bit longer than the camera plane
 	double			camera_plane; // camera plane should always be perpendicular to the direction for smooth view
 	double			field_of_vision; // sum of previous two struct members
+	double			line_height; // calculated height of line to draw on screen
+	double			draw_start; // calculate lowest and highest pixel to fill in current vertical stripe
+	double			draw_end;
 	// player handling
 	double			pos_x:22; // represents the position vector of the player
 	double			pos_y:12;
