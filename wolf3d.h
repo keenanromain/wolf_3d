@@ -76,9 +76,12 @@ typedef struct		s_env
 	double			map_x; //represents the current square of the map the ray is in
 	double			map_y;
 	double			side_dst_x; //initally the distance ray has to travel from origin to first x-side & y-side. Will be repurposed later on
-	double			side_dst_y;
+	double			side_dst_y; //step variables will always be either -1 or +1
 	double			delta_dst_y; //distance ray has to travel from 1 x-side/y-side to the next x-side/y-side. Refer to notes for graphic
 	double			delta_dst_x;
+	double			wall_dst; //used to calculate length of the ray
+	int				wall_hit; // used to tell if we can break out of the DDA loop.
+	int				side;	// If an x-side is hit, it's zero else if an y-side is hit, side equals one
 	// ~~~~ random ~~~~
 	double			size;
 	double			mid_x;
