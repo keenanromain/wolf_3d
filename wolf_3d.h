@@ -45,6 +45,7 @@ typedef struct		s_mouse
 
 typedef struct		s_env
 {
+	// the following values will be used to connect to the mlx server for rendering
 	void			*mlx;
 	void			*win;
 	void			*p;
@@ -53,6 +54,13 @@ typedef struct		s_env
 	int				bits;
 	int				bnum;
 	int				endian;
+	// the next subset of values are for calculating the field of vision
+	float			direction_vector;
+	float			camera_plane;
+	float			field_of_vision; // sum of previous two struct members
+	float			direction_distance;
+	float			x_coord;
+	float			y_coord;
 	float			size;
 	float			mid_x;
 	float			mid_y;
